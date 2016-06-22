@@ -1,0 +1,11 @@
+{
+    "node_count": 41,
+    "directed_cycle_count": 3,
+    "goal": 871326,
+    "shortest_path": [
+        9371810,
+        57842,
+        1990942,
+        871326
+    ]
+}
