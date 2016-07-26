@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class TwoArrays {
+public class Two_Arrays {
     
     public static boolean sumKCheck(ArrayList<ArrayList<Integer>> abset, int target) {
         ArrayList<Integer> a = abset.get(0);

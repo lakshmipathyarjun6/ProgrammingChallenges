@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class TwoStrings {
+public class Two_Strings {
     
     public static boolean substringCheck(String s1, String s2) {
         HashSet<Character> hs = new HashSet<Character>();
