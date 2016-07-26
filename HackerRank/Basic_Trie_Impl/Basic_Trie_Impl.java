@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-public class BasicTrieImpl {
+public class Basic_Trie_Impl {
 
     private TrieNode root;
     
-    public BasicTrieImpl() {
+    public Basic_Trie_Impl() {
         this.root = new TrieNode();
     }
     
@@ -49,7 +49,7 @@ public class BasicTrieImpl {
     
     public static void main(String [] args) {
         
-        BasicTrieImpl trie = new BasicTrieImpl();
+        Basic_Trie_Impl trie = new Basic_Trie_Impl();
         
         trie.addWord("Hello");
         trie.addWord("Hell");

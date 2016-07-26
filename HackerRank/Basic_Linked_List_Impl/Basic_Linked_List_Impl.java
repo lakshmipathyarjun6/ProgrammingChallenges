@@ -1,13 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-public class BasicLinkedListImpl {
+public class Basic_Linked_List_Impl {
     
     private static Node head;
     private static Node tail;
     private static int size;
     
-    public BasicLinkedListImpl() {
+    public Basic_Linked_List_Impl() {
         
         this.head = null;
         this.tail = null;
@@ -211,7 +211,7 @@ public class BasicLinkedListImpl {
 
     public static void main(String [] args) {
         
-        BasicLinkedListImpl linkedlist = new BasicLinkedListImpl();
+        Basic_Linked_List_Impl linkedlist = new Basic_Linked_List_Impl();
         
         linkedlist.addToFront(new Integer(3));
         linkedlist.addToFront(new Integer(4));

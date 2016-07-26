@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-public class BasicBinaryTreeImpl {
+public class Basic_Binary_Tree_Impl {
     
     private BinaryTreeNode root;
     
-    public BasicBinaryTreeImpl() {
+    public Basic_Binary_Tree_Impl() {
         this.root = null;
     }
     
@@ -39,7 +39,7 @@ public class BasicBinaryTreeImpl {
         }
     }
     
-    public static boolean levelLeaves(BasicBinaryTreeImpl tree) {
+    public static boolean levelLeaves(Basic_Binary_Tree_Impl tree) {
         if(tree.root == null) { // An empty tree technically does have all leaves at the same level
             return true;
         }
@@ -52,7 +52,7 @@ public class BasicBinaryTreeImpl {
 
     public static void main(String [] args) {
     
-        BasicBinaryTreeImpl treeOne = new BasicBinaryTreeImpl();
+        Basic_Binary_Tree_Impl treeOne = new Basic_Binary_Tree_Impl();
     
         treeOne.setRootNode(new Integer(12));
         treeOne.getRoot().setLeftChild(new Integer(5));
@@ -67,7 +67,7 @@ public class BasicBinaryTreeImpl {
             System.out.println("Tree One leaves are not at same level");
         }
         
-        BasicBinaryTreeImpl treeTwo = new BasicBinaryTreeImpl();
+        Basic_Binary_Tree_Impl treeTwo = new Basic_Binary_Tree_Impl();
         
         treeTwo.setRootNode(new Integer(12));
         treeTwo.getRoot().setLeftChild(new Integer(5));
@@ -81,7 +81,7 @@ public class BasicBinaryTreeImpl {
             System.out.println("Tree Two leaves are not at same level");
         }
         
-        BasicBinaryTreeImpl treeThree = new BasicBinaryTreeImpl();
+        Basic_Binary_Tree_Impl treeThree = new Basic_Binary_Tree_Impl();
         
         treeThree.setRootNode(new Integer(12));
         treeThree.getRoot().setLeftChild(new Integer(5));
