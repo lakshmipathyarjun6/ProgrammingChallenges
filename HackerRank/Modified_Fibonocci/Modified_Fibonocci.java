@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.math.*;
 
-public class ModifiedFibonocci {
+public class Modified_Fibonocci {
     
     public static BigInteger computeFibNum(Integer A,Integer B,Integer N) {
         BigInteger biA = new BigInteger(A.toString());

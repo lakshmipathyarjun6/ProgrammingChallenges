@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class TaumBday {
+public class Taum_Bday {
     
     public static long computeMinCost(long blackTotal, long whiteTotal, long blackPrice, long whitePrice, long conversionPrice) {
         

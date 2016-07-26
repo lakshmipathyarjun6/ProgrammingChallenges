@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class CutSticks {
+public class Cut_Sticks {
     
     public static int findMin(ArrayList<Integer> list) {
         int min = 2000;

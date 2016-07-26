@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class JimsBurgers {
+public class Jims_Burgers {
     
     public static TreeMap<Integer,Integer> SortByValue(HashMap<Integer,Integer> map) {
         ValueComparator vc =  new ValueComparator(map);
