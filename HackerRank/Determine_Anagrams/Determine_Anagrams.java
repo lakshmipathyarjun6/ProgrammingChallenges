@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class DetermineAnagrams {
+public class Determine_Anagrams {
     
     public static boolean allAnagrams (ArrayList <String> anagramList) {
         

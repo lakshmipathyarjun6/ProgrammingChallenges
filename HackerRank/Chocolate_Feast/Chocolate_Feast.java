@@ -1,24 +1,23 @@
 import java.io.*;
 import java.util.*;
 
-public class UtopianTree {
+public class Chocolate_Feast {
     
-    public static Integer computeHeight(int cycles) {
+    public static Integer computeTotal(int n, int c, int m) {
         
-        int height = 1;
-        boolean odd = true;
-        while(cycles > 0) {
-            if(odd) {
-                height*=2;
-                odd = false;
-            }
-            else {
-                height++;
-                odd = true;
-            }
-            cycles--;
+        int chocolates = 0;
+        int wrappers = 0;
+        while((n-c)>= 0) {
+            chocolates++;
+            wrappers++;
+            n -= c;
         }
-        return height;
+        while((wrappers-m) >= 0) {
+            chocolates++;
+            wrappers++;
+            wrappers -= m;
+        }
+        return chocolates;
     }
     
     public static void main(String[] args) {
@@ -31,8 +30,11 @@ public class UtopianTree {
             ArrayList<Integer> nums = new ArrayList<Integer>();
             for (int i = 0; i < numLines; i++) {
                 String temp = stdin.readLine();
-                Integer cycles = Integer.parseInt(temp);
-                nums.add(computeHeight(cycles));
+                String [] splitarr = temp.split("\\s+");
+                Integer N = Integer.parseInt(splitarr[0]);
+                Integer C = Integer.parseInt(splitarr[1]);
+                Integer M = Integer.parseInt(splitarr[2]);
+                nums.add(computeTotal(N,C,M));
             }
             for (int i = 0; i < nums.size(); i++) {
                 System.out.println(nums.get(i));
