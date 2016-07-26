@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class TimeInWords {
+public class Time_In_Words {
     
     private static HashMap<Integer,String> numInWords = new HashMap<Integer,String>();
     

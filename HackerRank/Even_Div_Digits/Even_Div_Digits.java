@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class EvenDivDigits {
+public class Even_Div_Digits {
     
     public static int findNumDivisors(Integer val) {
         int sum = 0;
