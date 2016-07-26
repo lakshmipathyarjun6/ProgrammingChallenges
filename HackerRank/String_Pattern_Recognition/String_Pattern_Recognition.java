@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class StringPatternRecognition {
+public class String_Pattern_Recognition {
 
     public static Hashtable<Character, String> table = new Hashtable<Character, String>();
     

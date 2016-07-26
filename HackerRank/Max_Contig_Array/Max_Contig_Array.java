@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class MaxContigArray {
+public class Max_Contig_Array {
     
     public static int findMaxContig(ArrayList<Integer> arr) {
         int sumQuants [] = new int[arr.size()];
