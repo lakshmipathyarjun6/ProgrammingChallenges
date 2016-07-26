@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class ACMICPC {
+public class ACM_IC_PC {
     
     public static void calculateOptimal(ArrayList<Integer[]> peoplesTopics) {
         

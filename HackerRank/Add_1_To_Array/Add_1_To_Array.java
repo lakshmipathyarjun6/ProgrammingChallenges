@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Add1toArray {
+public class Add_1_To_Array {
 
     public static void add1 (int [] arr) {
         for(int i = arr.length-1; i >= 0; i--) {

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class AngryProfessor {
+public class Angry_Professor {
     
     public static String classInSession(int n, int k, ArrayList<Integer> times) {
         

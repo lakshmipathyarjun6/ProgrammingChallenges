@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class CubeSumCubeRoots {
+public class Cube_Sum_Cube_Roots {
     
     public static int cubeNumbers(int M, int N) {
         
