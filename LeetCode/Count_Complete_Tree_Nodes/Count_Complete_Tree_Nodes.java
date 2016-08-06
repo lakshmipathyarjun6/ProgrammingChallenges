@@ -8,7 +8,7 @@
  * }
  */
 public class Solution {
-    public int getLeftHeight(TreeNode n) {
+    private int getLeftHeight(TreeNode n) {
         if(n==null) return 0;
         
         int height=0;
@@ -19,7 +19,7 @@ public class Solution {
         return height;
     }
     
-    public int getRightHeight(TreeNode n) {
+    private int getRightHeight(TreeNode n) {
         if(n==null) return 0;
         
         int height=0;
