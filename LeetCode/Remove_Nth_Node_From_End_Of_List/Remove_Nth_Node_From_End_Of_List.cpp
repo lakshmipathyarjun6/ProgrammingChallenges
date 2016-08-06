@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+private:
     ListNode* findNthNode(ListNode* head, int n) {
         ListNode* p1 = head;
         ListNode* p2 = head;
@@ -31,7 +31,7 @@ public:
         }
         current->next = nthNode->next;
     }
-
+public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* nthNode = findNthNode(head,n);
         if(nthNode == head) {

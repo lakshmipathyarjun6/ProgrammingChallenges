@@ -17,7 +17,7 @@ public class Solution {
         return Math.max(decision.toTake,decision.orNotToTake);
     }
  
-    public Decision makeDecision(TreeNode root){
+    private Decision makeDecision(TreeNode root){
         if(root == null){
             Decision decision = new Decision();
             return decision;
