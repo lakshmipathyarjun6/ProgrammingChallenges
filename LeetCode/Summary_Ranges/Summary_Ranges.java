@@ -1,44 +1,23 @@
 public class Solution {
     public List<String> summaryRanges(int[] nums) {
-        List<Range> intermediate = new LinkedList<Range>();
+        List<String> result = new LinkedList<String>();
         if(nums == null || nums.length == 0) {
-            List<String> result = new LinkedList<String>();
             return result;
         }
-        Range first = new Range();
-        first.start = nums[0];
-        intermediate.add(first);
+        Range current = new Range();
+        current.start = nums[0];
         for(int i = 1; i < nums.length; i++) {
-            Range previous = intermediate.get(intermediate.size()-1);
-            if(previous.end != null) {
-                if(nums[i] == previous.end+1) {
-                    previous.end = nums[i];
-                }
-                else {
-                    Range newRange = new Range();
-                    newRange.start = nums[i];
-                    intermediate.add(newRange);
-                }
+            int comparisonVal = (current.end != null) ? current.end+1 : current.start+1;
+            if(nums[i] == comparisonVal) {
+                current.end = nums[i];
             }
             else {
-                if(nums[i] == previous.start+1) {
-                    previous.end = nums[i];
-                }
-                else {
-                    previous.end = previous.start;
-                    Range newRange = new Range();
-                    newRange.start = nums[i];
-                    intermediate.add(newRange);
-                }
+                result.add(current.toString());
+                current = new Range();
+                current.start = nums[i];
             }
         }
-        if(intermediate.get(intermediate.size()-1).end == null) {
-            intermediate.get(intermediate.size()-1).end = intermediate.get(intermediate.size()-1).start;
-        }
-        List<String> result = new LinkedList<String>();
-        for(Range range : intermediate) {
-            result.add(range.toString());
-        }
+        result.add(current.toString());
         return result;
     }
 }
@@ -51,12 +30,10 @@ class Range {
         end = null;
     }
     public String toString() {
-        if(start == end) {
+        if(end == null) {
             return String.valueOf(start);
         }
         return String.valueOf(start) + "->" + String.valueOf(end);
     }
 }
-
-
 
