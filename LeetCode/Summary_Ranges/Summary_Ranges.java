@@ -37,14 +37,7 @@ public class Solution {
         }
         List<String> result = new LinkedList<String>();
         for(Range range : intermediate) {
-            String elem = "";
-            if(range.start != range.end) {
-                elem = String.valueOf(range.start) + "->" + String.valueOf(range.end);
-            }
-            else {
-                elem = String.valueOf(range.start);
-            }
-            result.add(elem);
+            result.add(range.toString());
         }
         return result;
     }
@@ -57,5 +50,13 @@ class Range {
         start = null;
         end = null;
     }
+    public String toString() {
+        if(start == end) {
+            return String.valueOf(start);
+        }
+        return String.valueOf(start) + "->" + String.valueOf(end);
+    }
 }
+
+
 
