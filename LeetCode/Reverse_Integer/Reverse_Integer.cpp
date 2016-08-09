@@ -8,7 +8,7 @@ class Solution {
         while(x != 0) {
             retPrev = ret;
             ret *= 10;
-            if(retPrev != (ret / 10)) {
+            if(retPrev != (ret / 10)) { // overflow check
                 return 0;
             }
             ret += (x % 10);
