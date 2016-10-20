@@ -8,7 +8,8 @@
  */
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        Stack<Integer> sum = new Stack<Integer>();
+        ListNode sumHead = new ListNode(0);
+        ListNode sumRunner = sumHead;
         
         ListNode l1Runner = l1;
         ListNode l2Runner = l2;
@@ -16,57 +17,28 @@ public class Solution {
         int carry = 0;
         
         while(l1Runner != null || l2Runner != null) {
+            int sumVal = carry + ((l1Runner == null) ? l2Runner.val : ((l2Runner == null) ? l1Runner.val : l1Runner.val + l2Runner.val));
+            ListNode nextVal = new ListNode(sumVal % 10);
+            carry = (sumVal >= 10) ? 1 : 0;
             if(l1Runner == null) {
-                int sumVal = l2Runner.val + carry;
-                if(sumVal >= 10) {
-                    sum.push(sumVal % 10);
-                    carry = 1;
-                }
-                else {
-                    sum.push(sumVal);
-                    carry = 0;
-                }
                 l2Runner = l2Runner.next;
             }
             else if(l2Runner == null) {
-                int sumVal = l1Runner.val + carry;
-                if(sumVal >= 10) {
-                    sum.push(sumVal % 10);
-                    carry = 1;
-                }
-                else {
-                    sum.push(sumVal);
-                    carry = 0;
-                }
                 l1Runner = l1Runner.next;
             }
             else {
-                int sumVal = l1Runner.val + l2Runner.val + carry;
-                if(sumVal >= 10) {
-                    sum.push(sumVal % 10);
-                    carry = 1;
-                }
-                else {
-                    sum.push(sumVal);
-                    carry = 0;
-                }
                 l1Runner = l1Runner.next;
                 l2Runner = l2Runner.next;
             }
+            sumRunner.next = nextVal;
+            sumRunner = sumRunner.next;
         }
         
         if(carry == 1) {
-            sum.push(1);
+            sumRunner.next = new ListNode(1);
+            sumRunner = sumRunner.next;
         }
-        
-        ListNode nextVal = null;
-        
-        while(!sum.empty()) {
-            ListNode current = new ListNode(sum.pop());
-            current.next = nextVal;
-            nextVal = current;
-        }
-        
-        return nextVal;
+
+        return sumHead.next;
     }
 }
