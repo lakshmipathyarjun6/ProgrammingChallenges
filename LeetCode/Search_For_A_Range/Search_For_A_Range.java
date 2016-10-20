@@ -1,8 +1,8 @@
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
         int [] range = new int[2];
-        range[0]=-1;
-        range[1]=-1;
+        range[0] = -1;
+        range[1] = -1;
  
         binarySearch(nums, 0, nums.length-1, target, range);
         return range;
@@ -28,8 +28,8 @@ public class Solution {
             binarySearch(nums, left, mid-1, target, arr);
         }
         else{
-            arr[0]=mid;
-            arr[1]=mid;
+            arr[0] = mid;
+            arr[1] = mid;
  
             //handle duplicates - left
             int t1 = mid;

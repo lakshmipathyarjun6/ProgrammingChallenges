@@ -8,33 +8,22 @@
  * };
  */
 class Solution {
-    public:
-    
-    void inorderTraversalHelper(TreeNode* root, queue<int>& st) {
+public:
+
+    void inorderTraversalHelper(TreeNode* root, vector<int>& st) {
         if(!root) {
             return;
         }
-        
         else {
             inorderTraversalHelper(root->left, st);
-            st.push(root->val);
+            st.push_back(root->val);
             inorderTraversalHelper(root->right, st);
         }
-        
     }
-    
+
     vector<int> inorderTraversal(TreeNode* root) {
-        
-        queue<int> traversal;
-        inorderTraversalHelper(root, traversal);
-        
         vector<int> ordered;
-        
-        while(!traversal.empty()) {
-            ordered.push_back(traversal.front());
-            traversal.pop();
-        }
-        
+        inorderTraversalHelper(root, ordered);
         return ordered;
     }
 };
