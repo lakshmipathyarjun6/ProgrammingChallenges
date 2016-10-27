@@ -2,7 +2,7 @@ public class Solution {
     
     Map<Character,Integer> numeralVals = new HashMap<Character,Integer>();
     
-    public int romanToInt(String s) {
+    private void initialize() {
         numeralVals.put('I',1);
         numeralVals.put('V',5);
         numeralVals.put('X',10);
@@ -10,9 +10,13 @@ public class Solution {
         numeralVals.put('C',100);
         numeralVals.put('D',500);
         numeralVals.put('M',1000);
-        
+    }
+    
+    public int romanToInt(String s) {
         Character previous = null;
         int total = 0;
+        
+        initialize();
         
         for(int i = s.length()-1; i >= 0; i--) {
             Character val = s.charAt(i);

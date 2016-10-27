@@ -15,7 +15,8 @@ public class Solution {
         int index = 0;
         
         for( Integer i : foundVals ) {
-            arr[index++] = i; //note the autounboxing here
+            arr[index] = i;
+            index++;
         }
         
         return arr;
