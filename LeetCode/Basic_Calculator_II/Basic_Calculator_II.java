@@ -17,39 +17,38 @@ public class Solution {
                 currentNumber = (currentNumber == -100) ? val : currentNumber*10 + val;
             }
             else {
-                if(ch == '(') {
-                    operators.push(ch);
-                }
-                else if(ch == ')') {
-                    if(currentNumber != -100) {
-                        operands.push(currentNumber);
+                operands.push(currentNumber);
+                if(ch == '*' || ch == '/') {
+                    if(!operators.empty() && (operators.peek() == '*' || operators.peek() == '/')) {
+                        evaluate(true);
                     }
-                    evaluate(true);
                 }
                 else {
-                    if(currentNumber != -100) {
-                        operands.push(currentNumber);
-                    }
                     evaluate(false);
-                    operators.push(ch);
                 }
+                operators.push(ch);
                 currentNumber = -100;
             }
+            
         }
         
         if(currentNumber != -100 || operators.size() > 0) {
             if(currentNumber != -100) {
                 operands.push(currentNumber);
             }
-            evaluate(true);
+            evaluate(false);
         }
         
         return operands.pop();
     }
     
-    public void evaluate(boolean removeLeftParen) {
+    public void evaluate(boolean multipliesAndDividesOnly) {
         
-        while(!operators.empty() && operators.peek() != '(') {
+        while(!operators.empty()) {
+            if(multipliesAndDividesOnly && (operators.peek() == '+' || operators.peek() == '-')) {
+                break;
+            }
+            
             Integer secondVal = operands.pop();
             Integer firstVal = operands.pop();
             Character symbol = operators.pop();
@@ -62,14 +61,17 @@ public class Solution {
                 case '-':
                     result = firstVal - secondVal;
                     break;
+                case '*':
+                    result = firstVal * secondVal;
+                    break;
+                case '/':
+                    result = firstVal / secondVal;
+                    break;
             }
             
             operands.push(result);
         }
-        
-        if(removeLeftParen && !operators.empty() && operators.peek() == '(') {
-            operators.pop();
-        }
+
     }
     
 }
